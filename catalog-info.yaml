@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: ullma1vbz-nodejs-gitops
+  description: This is GitOps manifest for ullma1vbz-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=ullma1vbz-nodejs
+    backstage.io/kubernetes-id: ullma1vbz-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: ullma1vbz-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:ullma1vbz-nodejs
